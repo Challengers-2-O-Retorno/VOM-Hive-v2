@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <!-- Container do cabeçalho -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <include layout="@layout/header" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Banner principal -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/mainOrange"
+        android:background="@drawable/banner_background"
+        app:layout_constraintTop_toBottomOf="@id/headerContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp"
+        android:padding="20dp"
+        android:clipToPadding="false"
+        android:layout_marginHorizontal="16dp">
+
+        <TextView
+            android:id="@+id/homeTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bebas_neue"
+            android:text="Eleve o seu marketing para o próximo patamar com inteligência artificial"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:lineSpacingExtra="8sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/robot"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/robot"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/robot"
+            android:layout_marginStart="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Descrição e imagem principal -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/descriptionBanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/banner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/homeDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Aproveitando o máximo da tecnologia para impulsionar seu crescimento empresarial"
+            android:textColor="@color/black"
+            android:fontFamily="@font/bebas_neue"
+            android:textSize="24sp"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/HomeImg"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:src="@drawable/marketing_strategy"
+            android:layout_marginTop="12dp"
+            android:scaleType="centerCrop"
+            android:background="@drawable/image_background"
+            app:layout_constraintTop_toBottomOf="@id/homeDescription"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Botões de Login e Equipe -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/descriptionBanner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/BtnLogin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:fontFamily="@font/bebas_neue"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/mainOrange"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintWidth_percent="0.45"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/BtnEquipe"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Equipe"
+            android:fontFamily="@font/bebas_neue"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/mainOrange"
+            android:layout_marginStart="8dp"
+            app:layout_constraintWidth_percent="0.45"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
