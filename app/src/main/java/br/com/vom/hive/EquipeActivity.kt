@@ -20,8 +20,7 @@ class EquipeActivity : AppCompatActivity() {
         }
         val backArrow = findViewById<ImageView>(R.id.backArrow)
         backArrow.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            finish()
         }
     }
 }

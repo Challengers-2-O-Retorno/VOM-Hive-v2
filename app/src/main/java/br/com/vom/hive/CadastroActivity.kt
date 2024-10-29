@@ -26,8 +26,7 @@ class CadastroActivity : AppCompatActivity() {
 
         val backArrow = findViewById<ImageView>(R.id.backArrow)
         backArrow.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            finish()
         }
 
         val registerButton = findViewById<TextView>(R.id.registerButton)

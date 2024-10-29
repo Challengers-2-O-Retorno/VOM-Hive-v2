@@ -42,7 +42,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/headerContainer"
-        app:layout_constraintHorizontalBias="0.5"
+
         app:layout_constraintWidth_percent="0.8"/>
 
     <EditText
@@ -56,7 +56,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/usernameEditText"
-        app:layout_constraintHorizontalBias="0.5"
+
         app:layout_constraintWidth_percent="0.8"/>
 
     <!-- Campo Senha -->
@@ -71,7 +71,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/emailEditText"
-        app:layout_constraintHorizontalBias="0.5"
+
         app:layout_constraintWidth_percent="0.8"/>
 
     <EditText
@@ -85,7 +85,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/passwordEditText"
-        app:layout_constraintHorizontalBias="0.5"
+
         app:layout_constraintWidth_percent="0.8"/>
 
     <!-- Botão Cadastrar -->
@@ -102,7 +102,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/passwordRepeatEditText"
-        app:layout_constraintHorizontalBias="0.5"
+
         app:layout_constraintWidth_percent="0.8"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

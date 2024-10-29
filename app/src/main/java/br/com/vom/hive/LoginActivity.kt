@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.style.UnderlineSpan
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -23,6 +24,12 @@ class LoginActivity : AppCompatActivity() {
         loginButton.setOnClickListener {
             Toast.makeText(this, "Logado com sucesso!", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+        }
+
+        val createAccount = findViewById<TextView>(R.id.createAccountTextView)
+        createAccount.setOnClickListener {
+            val intent = Intent(this, CadastroActivity::class.java)
             startActivity(intent)
         }
     }
