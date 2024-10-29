@@ -50,6 +50,8 @@
         android:layout_marginTop="8dp"
         android:clickable="true"/>
 
+
+
     <Button
         android:id="@+id/loginButton"
         android:layout_width="match_parent"
@@ -81,6 +83,16 @@
         android:drawablePadding="8dp"
         android:layout_marginTop="16dp"
         android:padding="12dp"/>
+
+    <!--IMPLEMENTAR - Por enquanto é charme tambem -->
+    <TextView
+        android:id="@+id/createAccountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Não possui cadastro ainda ? Clique aqui"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:clickable="true"/>
 
 
 </LinearLayout>
