@@ -41,10 +41,12 @@
         android:drawablePadding="8dp"
         android:layout_marginTop="16dp"/>
 
+    <!--IMPLEMENTAR - Por enquanto é charme tambem -->
     <TextView
         android:id="@+id/forgotPasswordTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="16dp"
         android:text="Esqueceu a senha?"
         android:layout_gravity="end"
         android:layout_marginTop="8dp"
@@ -84,11 +86,12 @@
         android:layout_marginTop="16dp"
         android:padding="12dp"/>
 
-    <!--IMPLEMENTAR - Por enquanto é charme tambem -->
+
     <TextView
         android:id="@+id/createAccountTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="16dp"
         android:text="Não possui cadastro ainda ? Clique aqui"
         android:layout_gravity="center"
         android:layout_marginTop="8dp"

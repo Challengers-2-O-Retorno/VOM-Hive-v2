@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "722867016046",
+    "project_id": "hive-760a5",
+    "storage_bucket": "hive-760a5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:722867016046:android:0b11ae5893e89b878bb17f",
+        "android_client_info": {
+          "package_name": "br.com.vom.hive"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvBsA6YYzaW7Xk4TpW6Xs81Ym5QKUO0SA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

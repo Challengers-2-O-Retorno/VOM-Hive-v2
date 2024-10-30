@@ -2,6 +2,7 @@ package br.com.vom.hive
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -9,8 +10,19 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class CadastroActivity : AppCompatActivity() {
+
+    private val auth by lazy {
+        FirebaseAuth.getInstance()
+    }
+
+    private val db by lazy {
+        FirebaseFirestore.getInstance()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -31,9 +43,38 @@ class CadastroActivity : AppCompatActivity() {
 
         val registerButton = findViewById<TextView>(R.id.registerButton)
         registerButton.setOnClickListener {
-            Toast.makeText(this, "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
+
+            val username = findViewById<TextView>(R.id.usernameEditText).text.toString()
+            val email = findViewById<TextView>(R.id.emailEditText).text.toString()
+            val password = findViewById<TextView>(R.id.passwordEditText).text.toString()
+            val passwordConfirmation =
+                findViewById<TextView>(R.id.passwordConfirmationEditText).text.toString()
+            if (password != passwordConfirmation) {
+                Toast.makeText(this, "As senhas não conferem!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            } else {
+                auth.createUserWithEmailAndPassword(email, password)
+                    .addOnSuccessListener {
+                        val userID = auth.currentUser?.uid ?: ""
+                        val newUser = mapOf("username" to username)
+                        db.collection("users")
+                            .document(userID)
+                            .set(newUser)
+                            .addOnSuccessListener {
+                                //Log.i("cadastro", userID)
+                                Toast.makeText(
+                                    this,
+                                    "Cadastro realizado com sucesso!",
+                                    Toast.LENGTH_SHORT
+                                )
+                                    .show()
+                                finish()
+                            }
+
+
+                    }
+            }
+
         }
     }
 }
