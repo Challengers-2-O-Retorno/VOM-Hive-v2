@@ -61,7 +61,7 @@ class CadastroActivity : AppCompatActivity() {
                             .document(userID)
                             .set(newUser)
                             .addOnSuccessListener {
-                                //Log.i("cadastro", userID)
+                                Log.i("cadastro", userID)
                                 Toast.makeText(
                                     this,
                                     "Cadastro realizado com sucesso!",
