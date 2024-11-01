@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/main"
+    android:layout_height="match_parent"
+    android:background="@color/mainOrange">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:showDividers="middle"
+        android:divider="@drawable/empty_divider"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/headerContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="@color/mainOrange">
+
+            <ImageView
+                android:id="@+id/backArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_arrow_back_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="15dp"
+                android:contentDescription="Voltar" />
+
+            <TextView
+                android:id="@+id/headerTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Registro de Campanha"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:fontFamily="@font/bebas_neue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                 />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <EditText
+            android:id="@+id/campaignIdEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ID da Campanha"
+            android:inputType="text"
+            android:visibility="gone"
+            android:layout_marginHorizontal="26dp"/>
+
+        <EditText
+            android:id="@+id/campaignNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nome da Campanha"
+            android:inputType="textPersonName"
+            android:paddingStart="20dp"
+            android:layout_marginHorizontal="22dp"/>
+
+        <EditText
+            android:id="@+id/campaignCategoryEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Categoria"
+            android:inputType="text"
+            android:paddingStart="20dp"
+            android:layout_marginHorizontal="22dp"/>
+
+        <EditText
+            android:id="@+id/campaignProductEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Produto"
+            android:inputType="text"
+            android:paddingStart="20dp"
+            android:layout_marginHorizontal="22dp"/>
+
+        <EditText
+            android:id="@+id/campaignTargetEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Público Alvo (Target)"
+            android:inputType="text"
+            android:paddingStart="20dp"
+            android:layout_marginHorizontal="22dp"/>
+
+        <EditText
+            android:id="@+id/campaignTagsEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tags (separadas por vírgula)"
+            android:inputType="text"
+            android:paddingStart="20dp"
+            android:layout_marginHorizontal="22dp"/>
+
+        <Button
+            android:id="@+id/saveCampaignButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Salvar Campanha"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:layout_marginHorizontal="22dp"/>
+
+    </LinearLayout>
+</ScrollView>
