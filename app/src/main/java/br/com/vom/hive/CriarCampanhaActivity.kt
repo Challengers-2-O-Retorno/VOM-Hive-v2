@@ -39,24 +39,30 @@ class CriarCampanhaActivity : AppCompatActivity() {
             val newCampaign = mapOf(
                 "name" to findViewById<EditText>(R.id.campaignNameEditText).text.toString(),
                 "prod" to findViewById<EditText>(R.id.campaignProductEditText).text.toString(),
-                "prod" to findViewById<EditText>(R.id.campaignCategoryEditText).text.toString(),
                 "target" to findViewById<EditText>(R.id.campaignTargetEditText).text.toString(),
                 "tags" to findViewById<EditText>(R.id.campaignTagsEditText).text.toString().split(",").toList()
             )
 
-            db.collection("campaigns")
-                .add(newCampaign)
-                .addOnSuccessListener {
-                    Toast.makeText(this, "Campanha salva com sucesso!", Toast.LENGTH_SHORT).show()
-                    finish()
-                }
-                .addOnFailureListener { e ->
-                    AlertDialog.Builder(this)
-                        .setTitle("Erro ao cadastrar campanha")
-                        .setMessage(e.message)
-                        .setPositiveButton("OK", null)
-                        .create().show()
-                }
+            if (newCampaign["name"] == "" || newCampaign["prod"] == "" || newCampaign["target"] == ""){
+                Toast.makeText(this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }else{
+                db.collection("campaigns")
+                    .add(newCampaign)
+                    .addOnSuccessListener {
+                        Toast.makeText(this, "Campanha salva com sucesso!", Toast.LENGTH_SHORT).show()
+                        finish()
+                    }
+                    .addOnFailureListener { e ->
+                        AlertDialog.Builder(this)
+                            .setTitle("Erro ao cadastrar campanha")
+                            .setMessage(e.message)
+                            .setPositiveButton("OK", null)
+                            .create().show()
+                    }
+            }
+
+
 
 
         }

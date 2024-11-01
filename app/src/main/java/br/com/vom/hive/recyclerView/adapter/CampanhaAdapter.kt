@@ -10,6 +10,7 @@ import br.com.vom.hive.model.Campanha
 
 class CampanhaAdapter(private val campanhas:List<Campanha>) : RecyclerView.Adapter<CampanhaAdapter.CampanhaViewHolder>() {
 
+
     class CampanhaViewHolder(val view: View) : RecyclerView.ViewHolder(view){
         val nomeCampanha = view.findViewById<TextView>(R.id.nomeCampanha)
     }
@@ -26,7 +27,7 @@ class CampanhaAdapter(private val campanhas:List<Campanha>) : RecyclerView.Adapt
 
     override fun onBindViewHolder(holder: CampanhaViewHolder, position: Int) {
         val campanha = campanhas[position]
-        holder.nomeCampanha.text = campanha.nome
+        holder.nomeCampanha.text = campanha.name
     }
 
 
