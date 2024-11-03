@@ -16,6 +16,15 @@
             android:text="Campanha 2"
             android:textColor="@color/black"
             android:layout_gravity="center|center_vertical"/>
+    <TextView
+        android:id="@+id/idCampanha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:text=""
+        android:textColor="@color/black"
+        android:layout_gravity="center|center_vertical"
+        android:visibility="gone"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"

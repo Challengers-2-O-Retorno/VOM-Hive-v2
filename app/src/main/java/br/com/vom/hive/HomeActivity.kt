@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -32,17 +33,10 @@ class HomeActivity : AppCompatActivity() {
             insets
         }
 
-        carregarCampanhas()
-
         val logout = findViewById<ImageView>(R.id.logout)
         logout.setOnClickListener {
             finish()
         }
-
-        val recyclerView =
-            findViewById<androidx.recyclerview.widget.RecyclerView>(R.id.campaignRecyclerView)
-        campanhaAdapter = CampanhaAdapter(listaCampanhas)
-        recyclerView.adapter = campanhaAdapter
 
         val registerButton = findViewById<Button>(R.id.registerButton)
         registerButton.setOnClickListener {
@@ -50,6 +44,25 @@ class HomeActivity : AppCompatActivity() {
         }
 
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        listaCampanhas.clear()
+
+        carregarCampanhas()
+
+        val recyclerView =
+            findViewById<androidx.recyclerview.widget.RecyclerView>(R.id.campaignRecyclerView)
+        campanhaAdapter = CampanhaAdapter(listaCampanhas)
+        campanhaAdapter.setOnItemClickListener(object : CampanhaAdapter.onItemClickListener {
+            override fun onItemClick(position: Int) {
+                val intent = Intent(this@HomeActivity, CampanhaActivity::class.java)
+                intent.putExtra("id", listaCampanhas[position].id)
+                startActivity(intent)
+            }
+        })
+        recyclerView.adapter = campanhaAdapter
     }
 
     fun carregarCampanhas() {
